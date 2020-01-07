@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comfortaa', cursive;
+  background: #eee;
+  letter-spacing: 0.25em;
+  overflow: auto;
+
+}
+
+.gameTitle {
+  text-align: center;
+  margin-top: 2em;
+}
+
+h1 {
+  color: #EF233C;
+  font-weight: 700;
+  position: relative;
+  padding-top: 150px;
+}
+
+.partOne {
+  color: #4392F1;
+}
+
+form {
+  width: 380px;
+  margin: 3em auto;
+  padding: 4em 2em 1em 2em;
+  background: #FFFFFF;
+  border-radius: 30px 0 30px 30px;
+  box-shadow: 0px 3px 3px -2px #ffffff;
+}
+
+.infoCard {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+input {
+  font-size: 16px;
+  padding: 10px 10px 10px 10px;
+  display: block;
+  color: #4392F1;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #757575;
+}
+
+input:focus {
+  outline: none;
+  border-radius: 20px 0 20px 20px;
+  border: solid 2px #4392F1;
+}
+
+label {
+  color: #999;
+  font-size: 18px;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  transition: all 0.2s ease;
+}
+
+/* active */
+input:focus~label, input.used~label {
+  top: -25px;
+  transform: scale(.75);
+  left: 0px;
+  /* font-size: 14px; */
+  color: #4392F1;
+}
+
+/* Button */
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: .3em 0 1em 0;
+  width: 100%;
+  vertical-align: middle;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 600;
+  border: 0;
+  border-radius: 20px 0 20px 20px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background-color: #4392F1;
+  box-shadow: 0px 3px 3px -2px #4392F1;
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.button:hover {
+  background-color: #EF233C;
+  color: #00131E;
+  font-weight: 700;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  box-shadow: 0px 5px 5px -3px #EF233C;
+}
