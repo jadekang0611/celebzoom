@@ -37,7 +37,7 @@
     </div>
   </div>
   <div class="gameQuestion">
-    <p><span class="subtitle">Question</span>: Who is this?</p>
+    <p id="qandA">Who is this?</p>
   </div>
 
   <div id="container2">
@@ -54,7 +54,7 @@
       </div>
 
       <div class="submitButton">
-        <button type="button" class="button" onClick="checkAnswer()">Submit</button>
+        <button type="button" id="submit" class="button" onClick="checkAnswer()">Submit</button>
 
       </div>
 
@@ -68,11 +68,14 @@
 
   <!-- Modal content -->
   <div class="resultSummary-content">
-    <p>Game Result Summary</p>
-    <p>Number of correct Answers: <span id="gameResult"></span></p>
-    <p id="lastMessage"></p>
-    <button type="button" name="button" onClick="newGame()">New Game</button>
-    <button type="button" name="button">Refer to friend</button>
+    <h1 class="modalTitle"><span class="partOne">Cele</span>Z&uuml;m <br />Summary</h1>
+    <div class="summaryContent">
+      <p><span id="name"></span>, you got <span id="gameResult"></span> correct.</p>
+      <p id="lastMessage"></p>
+    </div>
+
+    <button class="modalButton" type="button" name="button" onClick="newGame()">New Game</button>
+    
   </div>
 
 </div>

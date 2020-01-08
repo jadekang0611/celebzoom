@@ -42,11 +42,16 @@ h1 {
 }
 
 .item {
-  width: 300px;
-  margin: 5px;
+  width: 250px;
+  margin-right: 20px;
+  margin-left: 20px;
   text-align: center;
   padding: 20px 20px 20px 20px !important;
   border-bottom: solid 2px #4392F1;
+  border-radius: 20px 0px 20px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  box-shadow: 0px 3px 3px -2px #4392F1;
 }
 
 #problemNo {
@@ -81,6 +86,9 @@ h1 {
 
 .gameQuestion {
   text-align: center;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .subtitle {
@@ -192,8 +200,51 @@ input:focus~label, input.used~label {
 /* Game Result Summary Modal Content */
 .resultSummary-content {
   background-color: #ffffff;
-  margin: 15% auto;
+  margin: 30% auto;
   padding: 20px;
-  border: 1px solid #EF233C;
-  width: 80%;
+  border: 5px solid #4392F1;
+  max-width: 35%;
+  max-height: 35%;
+  min-width: 300px;
+  min-height: 300px;
+  text-align: center;
+  border-radius: 35px 0 35px 35px;
+  word-wrap: break-word;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+
+.modalTitle {
+  text-align: center;
+  margin-top: 0.2em;
+  color: #F87060;
+  font-weight: 700;
+  position: relative;
+  padding-top: 20px;
+  line-height: 1.5;
+}
+
+.modalButton {
+  border-radius: 20px 0px 20px 20px;
+  background: #4392F1;
+  outline: none;
+  padding: 10px 10px;
+  width: 30%;
+  margin: 10px 10px;
+  vertical-align: middle;
+  font-size: 18px;
+}
+
+.modalButton:focus {
+  outline: 0;
+}
+
+.modalButton:hover {
+  background-color: #EF233C;
+  color: #00131E;
+  font-weight: 700;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  box-shadow: 0px 5px 5px -3px #EF233C;
 }
