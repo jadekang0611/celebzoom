@@ -47,43 +47,47 @@
   </div>
   <!-- Choose my answer -->
 
-    <form>
-      <div class="answerArea">
-        <input type="text" id="answer" value="">
-<label for="">Your Answer</label>
-      </div>
-
-      <div class="submitButton">
-        <button type="button" id="submit" class="button" onClick="checkAnswer()">Submit</button>
-
-      </div>
-
-    </form>
-
-<!-- Game Result Summary Modal -->
-
-
-<!-- The Modal -->
-<div id="resultModal" class="modalBox">
-
-  <!-- Modal content -->
-  <div class="resultSummary-content">
-    <h1 class="modalTitle"><span class="partOne">Cele</span>Z&uuml;m <br />Summary</h1>
-    <div class="summaryContent">
-      <p><span id="name"></span>, you got <span id="gameResult"></span> correct.</p>
-      <p id="lastMessage"></p>
+  <form>
+    <div class="answerArea">
+      <input type="text" id="answer" value="">
+      <label for="">Your Answer</label>
     </div>
 
-    <button class="modalButton" type="button" name="button" onClick="newGame()">New Game</button>
+    <div class="submitButton">
+      <button type="button" id="submit" class="button" onClick="checkAnswer()">Submit</button>
+
+    </div>
+
+  </form>
+
+  <!-- Game Result Summary Modal -->
+
+
+  <!-- The Modal -->
+  <div id="resultModal" class="modalBox">
+
+    <!-- Modal content -->
+    <div class="resultSummary-content">
+      <h1 class="modalTitle"><span class="partOne">Cele</span>Z&uuml;m <br />Summary</h1>
+      <div class="summaryContent">
+        <p><span id="name"></span>, you got <span id="gameResult"></span> correct.</p>
+        <p id="lastMessage"></p>
+      </div>
+
+      <button class="modalButton" type="button" name="button" onClick="newGame()">New Game</button>
+
+    </div>
 
   </div>
-
-</div>
-
-
-
-
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="firebase.js"></script>
   <script src="script.js" type="text/javascript"></script>
+
 </body>
 
 </html>
