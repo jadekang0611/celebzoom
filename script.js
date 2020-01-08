@@ -7,6 +7,8 @@ let imageBox = document.querySelector("#celebImg");
 let scoreboard = document.querySelector('#total');
 let numberboard = document.querySelector('#number');
 let playerName = "";
+let gameResult = document.querySelector('#gameResult');
+let message = document.querySelector('#lastMessage');
 //create celebrity class
 
 class Celebrity {
@@ -37,19 +39,49 @@ function checkAnswer(){
     imageBox.src = celebrities[number - 1].src;
   }
   else {
-    console.log("Game is over");
+    gameResult.innerText = score/10;
+    modal.style.display = "block";
+    lastMessage.innerText = statement();
   }
 
 }
 
 
-//create a timer when body loads
-// let timer = setInterval(startTimer, 1000);
-//
-// //add an event handler
-// timer.addEventListener("onload", startTimer);
-// //add a callback function
-// function startTimer() {
-//   let time = 0;
-//   document.querySelector('#timer').innerHTML = time
-// }
+
+const messageList = [
+  'You suck',
+  'You mediocre',
+  'You rock!'
+]
+
+
+
+
+function statement() {
+  let noOfRightAnswer = score/10;
+  console.log(noOfRightAnswer);
+  console.log(celebrities.length);
+  console.log((noOfRightAnswer / celebrities.length)*100);
+  if ((noOfRightAnswer / celebrities.length)*100 < 50) {
+    return messageList[0];
+
+  } else if ((noOfRightAnswer / celebrities.length)*100 >= 50 && (noOfRightAnswer / celebrities.length)*100 < 80) {
+    return messageList[1];
+  } else {
+    return messageList[2];
+  }
+}
+
+
+// Get the modal
+let modal = document.querySelector("#resultModal");
+
+// When the user clicks on Restart Game, close the modal and go back to the welcome page
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+//when restart button is clicked, redirect player to the very first screen
+function newGame() {
+  window.location.href = 'index.html';
+}

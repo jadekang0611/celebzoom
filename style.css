@@ -7,7 +7,6 @@ body {
   background: #eee;
   letter-spacing: 0.25em;
   overflow: auto;
-
 }
 
 .gameTitle {
@@ -108,4 +107,17 @@ input:focus~label, input.used~label {
   opacity: 0.7;
   transition: opacity 0.2s;
   box-shadow: 0px 5px 5px -3px #EF233C;
+}
+
+.errorShake {
+  position: relative;
+  animation: shake .1s linear;
+  animation-iteration-count: 5;
+  border-bottom: solid 3px #EF233C !important;
+
+}
+
+@keyframes shake {
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
 }
