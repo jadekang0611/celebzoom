@@ -14,6 +14,11 @@ body {
   margin-top: 2em;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 h1 {
   color: #F87060;
   font-weight: 700;
@@ -195,6 +200,7 @@ input:focus~label, input.used~label {
   overflow: auto;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
+
 }
 
 /* Game Result Summary Modal Content */
@@ -205,13 +211,14 @@ input:focus~label, input.used~label {
   border: 5px solid #4392F1;
   max-width: 35%;
   max-height: 35%;
-  min-width: 300px;
-  min-height: 300px;
+  min-width: 400px;
+  min-height: 400px;
   text-align: center;
   border-radius: 35px 0 35px 35px;
   word-wrap: break-word;
   font-size: 18px;
   font-weight: 500;
+  box-shadow: 0px 5px 5px -3px #4392F1;
 }
 
 
@@ -234,6 +241,7 @@ input:focus~label, input.used~label {
   margin: 10px 10px;
   vertical-align: middle;
   font-size: 18px;
+  box-shadow: 0px 5px 5px -3px #4392F1;
 }
 
 .modalButton:focus {
@@ -243,8 +251,8 @@ input:focus~label, input.used~label {
 .modalButton:hover {
   background-color: #EF233C;
   color: #00131E;
-  font-weight: 700;
   opacity: 0.7;
   transition: opacity 0.2s;
   box-shadow: 0px 5px 5px -3px #EF233C;
+  cursor: pointer;
 }
