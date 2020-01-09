@@ -44,7 +44,7 @@ form {
   margin-bottom: 25px;
 }
 
-input {
+.nameField {
   font-size: 16px;
   padding: 10px 10px 10px 10px;
   display: block;
@@ -53,30 +53,30 @@ input {
   border: none;
   border-radius: 0;
   border-bottom: 1px solid #757575;
+  letter-spacing: 0.25em;
 }
 
-input:focus {
+.nameField:focus {
   outline: none;
   border-radius: 20px 0 20px 20px;
   border: solid 2px #4392F1;
+  transition: all 0.3s ease;
 }
 
-label {
-  color: #999;
-  font-size: 18px;
-  position: absolute;
-  left: 5px;
-  top: 10px;
-  transition: all 0.2s ease;
-}
-
-/* active */
-input:focus~label, input.used~label {
-  top: -25px;
-  transform: scale(.75);
-  left: 0px;
-  /* font-size: 14px; */
+.nameFieldInput{
+  font-size: 16px;
+  padding: 10px 10px 10px 10px;
+  display: block;
   color: #4392F1;
+  width: 100%;
+
+}
+
+::placeholder {
+  font-size: 18px;
+  color: #999999;
+  font-family: inherit;
+  letter-spacing: 0.25em;
 }
 
 /* Button */
@@ -96,7 +96,7 @@ input:focus~label, input.used~label {
   border: 0;
   border-radius: 20px 0 20px 20px;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all 0.5s ease;
   background-color: #4392F1;
   box-shadow: 0px 3px 3px -2px #4392F1;
 }

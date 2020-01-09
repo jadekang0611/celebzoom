@@ -1,6 +1,9 @@
 let userName = document.querySelector('#playerName');
 let submit = document.querySelector('.button');
 let warningZone = document.querySelector('#playerName');
+const nameField = document.querySelector('.nameField');
+const button = document.querySelector('.button');
+const label = document.querySelector('.textfield-label');
 
 function buildUrl() {
   if (userName.value === '') {
@@ -16,10 +19,15 @@ function buildUrl() {
   }
 }
 
-//add callback function
+//prevent the screen being refreshed
+button.addEventListener('click', function(e) {
+  e.preventDefault()
+})
 
-// document.querySelector('#playerName').onkeydown = function(evt){
-//    if(evt.keyCode == 13){
-//      // submit
-//    }
-// };
+//add event handler for enter input
+nameField.addEventListener('keyup', function(e) {
+  if(e.code === 13) {
+    e.preventDefault();
+
+  }
+})

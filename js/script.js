@@ -16,8 +16,23 @@ const parameter = new URLSearchParams(window.location.search);
 const country = parameter.get("country");
 const category = parameter.get("category");
 const name = parameter.get('name');
+const answerField = document.querySelector('#answer');
 let timer = document.querySelector('#realTime');
+let flag = false;
+let interval;
 
+//prevent the screen being refreshed
+submitButton.addEventListener('click', function(e) {
+  e.preventDefault()
+})
+
+//add event handler for enter input
+answerField.addEventListener('keyup', function(e) {
+  if(e.code === 13) {
+    e.preventDefault();
+
+  }
+})
 
 //create celebrity class
 class Celebrity {
@@ -38,7 +53,6 @@ let limitedQuery = [];
 var docRef = db.collection(country).doc(category);
 docRef.get().then(function(doc) {
   if (doc.exists) {
-    console.log("Document data:", doc.data());
     const data = doc.data().records;
     data.forEach(el => {
       let celeb = new Celebrity(el.name, el.src);
@@ -49,7 +63,6 @@ docRef.get().then(function(doc) {
     // create array of numbers for shuffling
     for (let i = 0; i < celebrities.length; i++) {
       shuffled.push(i);
-      console.log(i);
     }
 
     // shuffle the array based on Fisher-Yates shuffle
@@ -66,6 +79,7 @@ docRef.get().then(function(doc) {
       limitedQuery.push(celebrities[index]);
     }
 
+    console.log("1");
     imageBox.src = limitedQuery[number - 1].src;
     final.innerText = limitedQuery.length;
 
@@ -80,6 +94,7 @@ docRef.get().then(function(doc) {
 
 const celeZumResponse = ['Correct! How did you know?', 'Incorrect! The answer is ']
 function showOrigin() {
+  console.log("Show origin");
   imageBox.style.transform = "scale(1)";
 }
 
@@ -91,6 +106,7 @@ const messageList = [
 
 
 function statement() {
+  console.log("statement");
   let noOfRightAnswer = score / 10;
   if ((noOfRightAnswer / limitedQuery.length) * 100 < 50) {
     return messageList[0];
@@ -105,15 +121,19 @@ function statement() {
 //create timer
 function setTimer(){
   var count = 11;
-  var interval = setInterval(function(){
+  console.log("count: " + count);
+  interval = setInterval(function(){
     timer.innerHTML=count - 1;
     count--;
+    // timer has run out
     if (count === 0){
+      console.log("count === 0");
       clearInterval(interval);
       messageboard.innerText = celeZumResponse[1] + limitedQuery[number - 1].name;
       showOrigin();
       guess.value = "";
       if (number !== limitedQuery.length) {
+        flag = false;
         setTimeout(() => {
           number++;
           numberboard.innerText = number;
@@ -141,13 +161,22 @@ function setTimer(){
 setTimer();
 
 function checkAnswer() {
+  console.log("checkAnswer");
   submitButton.disabled = true;
   if (guess.value.toUpperCase() === limitedQuery[number - 1].name.toUpperCase()) {
+    clearInterval(interval);
+    console.log("interval cleared");
+    count = 0;
+    timer.innerHTML=count;
+    console.log("8");
     score += 10;
     scoreboard.innerText = score;
     messageboard.innerText = celeZumResponse[0];
     showOrigin();
   } else {
+    clearInterval(interval);
+    count = 0;
+    timer.innerHTML=count;
     messageboard.innerText = celeZumResponse[1] + limitedQuery[number - 1].name;
     showOrigin();
   }
@@ -160,15 +189,18 @@ function checkAnswer() {
       messageboard.innerText = "Who is this?";
       submitButton.disabled = false;
       imageBox.style.transform = "scale(3.5)";
+      setTimer();
     }, 3000);
 
   } else {
     setTimeout(() => {
+      console.log("12");
       gameResult.innerText = score / 10;
       modal.style.display = "block";
       lastMessage.innerText = statement();
       imageBox.style.transform = "scale(3.5)";
-    }, 3000)
+      setTimer();
+    }, 3000);
 
   }
 
