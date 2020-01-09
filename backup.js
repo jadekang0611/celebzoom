@@ -104,9 +104,9 @@ function statement() {
 
 //create timer
 function setTimer(){
-  var count = 11;
+  var count = 15;
   var interval = setInterval(function(){
-    timer.innerHTML=count - 1;
+    timer.innerHTML=count;
     count--;
     if (count === 0){
       clearInterval(interval);
@@ -115,30 +115,27 @@ function setTimer(){
       guess.value = "";
       if (number !== limitedQuery.length) {
         setTimeout(() => {
+          imageBox.style.transform = "scale(3.5)";
           number++;
           numberboard.innerText = number;
           imageBox.src = limitedQuery[number - 1].src;
           messageboard.innerText = "Who is this?";
           submitButton.disabled = false;
-          imageBox.style.transform = "scale(3.5)";
-          setTimer();
         }, 3000);
 
       } else {
         setTimeout(() => {
+          imageBox.style.transform = "scale(3.5)";
           gameResult.innerText = score / 10;
           modal.style.display = "block";
           lastMessage.innerText = statement();
-          imageBox.style.transform = "scale(3.5)";
-
         }, 3000)
 
       }
+      setTimer();
     }
   }, 1000);
 }
-
-setTimer();
 
 function checkAnswer() {
   submitButton.disabled = true;
@@ -154,20 +151,20 @@ function checkAnswer() {
   guess.value = "";
   if (number !== limitedQuery.length) {
     setTimeout(() => {
+      imageBox.style.transform = "scale(3.5)";
       number++;
       numberboard.innerText = number;
       imageBox.src = limitedQuery[number - 1].src;
       messageboard.innerText = "Who is this?";
       submitButton.disabled = false;
-      imageBox.style.transform = "scale(3.5)";
     }, 3000);
 
   } else {
     setTimeout(() => {
+      imageBox.style.transform = "scale(3.5)";
       gameResult.innerText = score / 10;
       modal.style.display = "block";
       lastMessage.innerText = statement();
-      imageBox.style.transform = "scale(3.5)";
     }, 3000)
 
   }
