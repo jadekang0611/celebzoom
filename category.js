@@ -5,7 +5,7 @@ let playerName = document.querySelector('#name');
 playerName.innerHTML = name;
 
 let gameCategoryKr = document.querySelector('#gameCategory-kr');
-gameCategoryKr.href = "gamecategory.html?name=" + name;
+gameCategoryKr.href = "gamecategory.html?name=" + name + "&country=kr";
 
 let gameCategoryUs = document.querySelector('#gameCategory-us');
-gameCategoryUs.href = "gamecategory.html?name=" + name;
+gameCategoryUs.href = "gamecategory.html?name=" + name + "&country=us";

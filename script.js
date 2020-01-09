@@ -11,21 +11,45 @@ let gameResult = document.querySelector('#gameResult');
 let message = document.querySelector('#lastMessage');
 let messageboard = document.querySelector('#qandA');
 let submitButton = document.querySelector('#submit');
-
+let celebrities = [];
+const parameter = new URLSearchParams(window.location.search);
+const country = parameter.get("country");
+const category = parameter.get("category");
+const name = parameter.get('name');
 //create celebrity class
 
 class Celebrity {
-  constructor(src, name) {
-    this.src = src;
+  constructor(name, src) {
     this.name = name;
+    this.src = src;
   }
 }
 
-let celebrities = [new Celebrity('img/johnny_depp.jpg', "Johnny Depp"), new Celebrity('https://upload.wikimedia.org/wikipedia/commons/9/98/Al_Pacino.jpg', "Al Pacino")];
-console.log("Celebrities: " + celebrities);
-console.log("First Src: " + celebrities[number - 1].src);
-imageBox.src = celebrities[number - 1].src;
-final.innerText = celebrities.length;
+//How can I retrieve my data in firebase https://firebase.google.com/docs/firestore/query-data/get-data
+var docRef = db.collection(country).doc(category);
+docRef.get().then(function(doc) {
+  if (doc.exists) {
+      console.log("Document data:", doc.data());
+      const data = doc.data().records;
+      data.forEach(el => {
+        let celeb = new Celebrity(el.name, el.src);
+        celebrities.push(celeb);
+        console.log(celebrities);
+        imageBox.src = celebrities[number - 1].src;
+        final.innerText = celebrities.length;
+      });
+  } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+
+  }
+}).catch(function(error) {
+  console.log("Error getting document:", error);
+});
+
+
+
+
 
 const celeZumResponse = ['Correct! How did you know?', 'Incorrect! The answer is ']
 
@@ -53,7 +77,7 @@ function checkAnswer() {
       imageBox.src = celebrities[number - 1].src;
       messageboard.innerText = "Who is this?";
       submitButton.disabled = false;
-    }, 5000);
+    }, 3000);
 
   } else {
     setTimeout(() => {
@@ -90,9 +114,7 @@ function statement() {
   }
 }
 
-const parameter = new URLSearchParams(window.location.search);
-const name = parameter.get('name');
-console.log(name);
+
 let playerNameMusic = document.querySelector('#name');
 playerNameMusic.innerHTML = name;
 
