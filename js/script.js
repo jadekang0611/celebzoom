@@ -79,7 +79,7 @@ docRef.get().then(function(doc) {
       limitedQuery.push(celebrities[index]);
     }
 
-    console.log("1");
+
     imageBox.src = limitedQuery[number - 1].src;
     final.innerText = limitedQuery.length;
 
@@ -94,7 +94,7 @@ docRef.get().then(function(doc) {
 
 const celeZumResponse = ['Correct! How did you know?', 'Incorrect! The answer is ']
 function showOrigin() {
-  console.log("Show origin");
+
   imageBox.style.transform = "scale(1)";
 }
 
@@ -121,13 +121,12 @@ function statement() {
 //create timer
 function setTimer(){
   var count = 11;
-  console.log("count: " + count);
   interval = setInterval(function(){
     timer.innerHTML=count - 1;
     count--;
     // timer has run out
     if (count === 0){
-      console.log("count === 0");
+
       clearInterval(interval);
       messageboard.innerText = celeZumResponse[1] + limitedQuery[number - 1].name;
       showOrigin();
@@ -161,14 +160,14 @@ function setTimer(){
 setTimer();
 
 function checkAnswer() {
-  console.log("checkAnswer");
+
   submitButton.disabled = true;
   if (guess.value.toUpperCase() === limitedQuery[number - 1].name.toUpperCase()) {
     clearInterval(interval);
-    console.log("interval cleared");
+
     count = 0;
     timer.innerHTML=count;
-    console.log("8");
+
     score += 10;
     scoreboard.innerText = score;
     messageboard.innerText = celeZumResponse[0];
@@ -194,7 +193,7 @@ function checkAnswer() {
 
   } else {
     setTimeout(() => {
-      console.log("12");
+
       gameResult.innerText = score / 10;
       modal.style.display = "block";
       lastMessage.innerText = statement();
