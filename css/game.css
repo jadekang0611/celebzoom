@@ -30,6 +30,12 @@ h1 {
   color: #4392F1;
 }
 
+.container-all {
+  margin-top: 35px;
+  border: solid 5px #4392F1;
+  border-radius: 20px 20px 20px 20px;
+}
+
 #container1 {
   display: flex;
   flex-direction: row;
@@ -53,7 +59,7 @@ h1 {
   text-align: center;
   padding: 20px 20px 20px 20px !important;
   border-bottom: solid 2px #4392F1;
-  border-radius: 20px 0px 20px 20px;
+  border-radius: 20px 20px 20px 20px;
   font-size: 20px;
   font-weight: 600;
   box-shadow: 0px 3px 3px -2px #4392F1;
@@ -78,7 +84,7 @@ h1 {
   overflow: hidden;
   margin: 3em 1em;
   background: #FFFFFF;
-  border-radius: 30px 0 30px 30px;
+  border-radius: 30px 30px 30px 30px;
   box-shadow: 0px 2px 1px -1px #ffffff;
 }
 
@@ -105,7 +111,7 @@ form {
   margin: 3em auto;
   padding: 4em 2em 1em 2em;
   background: #FFFFFF;
-  border-radius: 30px 0 30px 30px;
+  border-radius: 30px 30px 30px 30px;
   box-shadow: 0px 2px 1px -1px #ffffff;
 }
 
@@ -127,7 +133,7 @@ input {
 
 input:focus {
   outline: none;
-  border-radius: 20px 0 20px 20px;
+  border-radius: 20px 20px 20px 20px;
   border: solid 2px #4392F1;
 }
 
@@ -164,7 +170,7 @@ input:focus~label, input.used~label {
   font-family: 'Comfortaa', cursive;
   font-weight: 600;
   border: 0;
-  border-radius: 20px 0 20px 20px;
+  border-radius: 20px 20px 20px 20px;
   cursor: pointer;
   transition: all 0.15s ease;
   background-color: #4392F1;
@@ -188,7 +194,7 @@ input:focus~label, input.used~label {
 
 
 
-/* The Game Result Summary Modal (background) */
+/* The Game Intro Modal (background) */
 .modalBox {
   display: none;
   position: fixed;
@@ -203,10 +209,10 @@ input:focus~label, input.used~label {
 
 }
 
-/* Game Result Summary Modal Content */
+/* Game Intro Modal Content */
 .resultSummary-content {
   background-color: #ffffff;
-  margin: 30% auto;
+  margin: 20% auto;
   padding: 20px;
   border: 5px solid #4392F1;
   max-width: 35%;
@@ -214,7 +220,7 @@ input:focus~label, input.used~label {
   min-width: 400px;
   min-height: 400px;
   text-align: center;
-  border-radius: 35px 0 35px 35px;
+  border-radius: 35px 35px 35px 35px;
   word-wrap: break-word;
   font-size: 18px;
   font-weight: 500;
@@ -233,10 +239,12 @@ input:focus~label, input.used~label {
 }
 
 .modalButton {
-  border-radius: 20px 0px 20px 20px;
+  border-radius: 20px 20px 20px 20px;
   background: #4392F1;
   outline: none;
   padding: 10px 10px;
+  border: none;
+  color: #ffffff;
   width: 30%;
   margin: 10px 10px;
   vertical-align: middle;

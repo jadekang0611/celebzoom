@@ -31,3 +31,21 @@ nameField.addEventListener('keyup', function(e) {
 
   }
 })
+
+//Assign an onload event to my game intro modal
+let introModal = document.querySelector('#introModal');
+const gamePage = document.querySelector('.celezumPage');
+
+gamePage.onload = function() {showIntro()};
+
+function showIntro() {
+  introModal.style.display = "block";
+}
+
+let modalButton = document.querySelector('.modalButton');
+
+
+// When the user clicks on Let's start, close the modal
+modalButton.onclick = function() {
+  introModal.style.display = "none";
+}

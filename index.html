@@ -18,10 +18,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <!-- inject:css -->
   <link rel="stylesheet" href="css/style.css">
+
   <title>CeleZ&uuml;m</title>
 </head>
 
-<body>
+<body class="celezumPage">
   <div class="gameTitle">
     <h1><a href="index.html"><span class="partOne">Cele</span>Z&uuml;m</a></h1>
 
@@ -38,6 +39,34 @@
 
   </form>
 
+  <!-- Game Instruction Modal -->
+
+
+  <!-- The Modal -->
+  <div id="introModal" class="modalBox">
+
+    <!-- Modal content -->
+    <div class="intro-content">
+      <h1 class="modalTitle"><span class="partOne">Cele</span><span class="partTwo">Z&uuml;m</span></h1>
+      <div class="introContent">
+        <p class="welcome">Welcome to <span class="partOne">Cele</span><span class="partTwo">Z&uuml;m</span></p>
+        <h3 class="content-title">
+          Instruction:
+        </h3>
+        <p class="instruction">
+          CeleZ&uuml;m is an interactive quiz game in which you are shown the zoomed in face of different celebrities from different categories.
+        </p>
+        <p class="instruction">
+          You have 10 seconds to figure out who the celebrity is.
+        </p>
+        <p class="instruction luck">Good luck!</p>
+      </div>
+
+      <button class="modalButton" type="button" name="button" onClick="start()">Let's Start</button>
+
+    </div>
+
+  </div>
 
   <script src="js/index.js" type="text/javascript"></script>
 </body>
