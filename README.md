@@ -6,6 +6,9 @@
 
 CeleZ&uuml;m is an interactive quiz game in which the user is shown the zoomed in face of different celebrities from different categories. The user has 10 seconds to figure out who the celebrity is and must type in their answer and submit before the timer reaches 0. 10 questions will be shown before the game is over. Users receive 10 points per right answer.
 
+## Early Design & Plan
+![IMG_20200110_113746](https://user-images.githubusercontent.com/56938630/72181423-26fa2b00-339e-11ea-88fa-16f801dd1bd9.jpg)
+
 ## Technology
 
 * HTML5, CSS & JavaScript
