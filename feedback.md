@@ -25,6 +25,7 @@ Criteria: How does the project stack up to the requirements for this project? Is
 -   JS shows mastery of important themes such as DOM manipulation and functional programming.
 -   Separation of concerns into multiple HTML, CSS and JS files.
 -   Use of technology not covered in class, including Firebase and Material Design.
+-   Use of Git Branches to manage feature development. Nice work here!
 
 ### Areas for Growth:
 
@@ -56,7 +57,7 @@ Criteria: Does the application work without errors or bugs? Does it present a co
 
 ### Areas for Growth:
 
--   One small bug I noticed while playing the game is that while switching to the next question, the question switches before the picture, and for a few milliseconds the previous image still shows. 
+-   One small bug I noticed while playing the game is that while switching to the next question, the question switches before the picture, and for a few milliseconds the previous image still shows.
 -   Ten seconds is really short! I'd consider giving the user a little bit more time to answer the questions. :)
 
 ## Presentation - Performing
