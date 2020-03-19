@@ -120,7 +120,7 @@ function statement() {
 
 //create timer
 function setTimer(){
-  var count = 11;
+  let count = 11;
   interval = setInterval(function(){
     timer.innerHTML=count - 1;
     count--;
